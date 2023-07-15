@@ -76,6 +76,8 @@ btnCheck.addEventListener('click', event => {
     return;
   }
   if (userGuesses < guessNumber) {
+    input.value = '';
+    input.focus()
     tryes = Number(counter.textContent) - 1;
     printMessage('Мало...');
     counter.innerHTML = tryes
@@ -92,7 +94,8 @@ btnCheck.addEventListener('click', event => {
   }
   if (userGuesses > guessNumber) {
     printMessage('Много...');
-    
+    input.value = '';
+    input.focus()
     tryes = Number(counter.textContent) - 1;
     counter.innerHTML = tryes
     if (tryes === 0){
